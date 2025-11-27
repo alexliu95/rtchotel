@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 
-export default function HeroNav() {
+export default function SimpleHero() {
     const t = useTranslations('Navbar');
     const pathname = usePathname();
     const [isMobileMenuShow, setIsMobileMenuShow] = useState(false);
@@ -23,7 +23,7 @@ export default function HeroNav() {
     };
 
     return (
-        <div className="w-full">
+        <div className="w-full bg-gradient-to-b from-[#688EB8] to-[#8DB0DC]">
             <div className="flex gap-6 justify-between text-gray-300 px-4 py-2">
                 <div className="flex justify-around gap-2 font-[opensans] text-sm select-none">
                     <div>Tropical CasaLaguna Resort</div>

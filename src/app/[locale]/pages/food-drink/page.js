@@ -1,4 +1,5 @@
 'use client'
+import { Clock, MapPin } from "lucide-react";
 import BookingWidget from "../../components/BookingWidget";
 import ChatButton from "../../components/ChatButton";
 import Footer from "../../components/Footer";
@@ -7,12 +8,103 @@ import { Hero } from "../../components/Hero";
 import Navbar from "../../components/Navbar";
 import { Navigation } from "../../components/Navigation";
 
+const venues = [
+    {
+        id: 'oasis',
+        name: 'Oasis Pool Bar',
+        description: 'Nestled within the shimmering blue waters of the main resort pool, The Oasis Pool Bar redefines relaxation with its one-of-a-kind swim-up design. Perfectly blending luxury with convenience, sip on handcrafted cocktails without leaving the water.',
+        location: 'In the heart of the resort pool area',
+        hours: 'Mon-Tue: 1pm - 7pm, Wed-Sun: 12pm - 7pm',
+        imageUrl: '/assets/foodndrink/oasis.jpg',
+        features: ['Swim-up Bar', 'Tropical Cocktails', 'Mocktails', 'Light Snacks']
+    },
+    {
+        id: 'fresh',
+        name: 'Fresh Fresh Café',
+        description: 'A bright, health-focused spot known for fresh, flavorful meals made with organic ingredients. Catering especially well to vegetarians and vegans with smoothie bowls, wraps, and uplifting juices.',
+        location: 'Front of resort on main street',
+        hours: 'Mon-Tue: 7:30am - 7pm, Wed-Sun: 7:30am - 9pm',
+        imageUrl: '/assets/foodndrink/freshfresh.png',
+        features: ['Organic', 'Vegan Options', 'Smoothie Bowls', 'Casual Vibe']
+    },
+    {
+        id: 'kalipso',
+        name: 'Kalipso Restaurant',
+        description: `Kalipso Restaurant is Cabarete’s go-to destination for relaxed yet refined beachfront dining. Nestled directly on the sand and just steps from the vibrant Tropical Casa Laguna Beach Club, Kalipso invites you to indulge in fresh local seafood, Mediterranean-inspired favorites, and signature tropical cocktails — all served with sweeping ocean views and a laid-back island breeze.
+            Whether you're enjoying a casual lunch by the waves, a romantic sunset dinner, or cocktails with friends under the stars, Kalipso blends tropical charm with casual sophistication. With toes in the sand and flavors that capture the essence of the Caribbean, every moment at Kalipso is unforgettable.
+            Guests of Tropical Casa Laguna enjoy the beach club and  the ease of having Cabarete’s most scenic restaurant just steps away.
+            Kalipso Restaurant – where great food, beach vibes, and unforgettable moments come together.
+            `,
+        location: 'On the beach, just across from the resort',
+        hours: 'Daily 7:30am - 9:00pm',
+        imageUrl: '/assets/foodndrink/kalipso.jpg',
+        features: ['Beachfront', 'Fresh Seafood', 'Live Music', 'Sunset Views']
+    }
+];
+
 export default function Page() {
     return (
-        <div
+        <>
+        <div className="pt-20">
+            {/* <div className="bg-tcl-light-blue/30 py-16 text-center">
+                <h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">Food & Drink</h1>
+                <p className="text-gray-600 max-w-2xl mx-auto px-4">
+                    From healthy organic bites to sunset seafood dinners, savor the flavors of the Caribbean at our distinct dining venues.
+                </p>
+            </div> */}
+
+            <div className="container mx-auto px-4 py-12 space-y-24">
+                {venues.map((venue, index) => (
+                <div key={venue.id} className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
+                    
+                    {/* Image Side */}
+                    <div className="w-full md:w-1/2 relative group">
+                        <div className="absolute top-4 -left-4 w-full h-full border-tcl-gold rounded-lg -z-10 hidden md:block group-hover:top-2 group-hover:-left-2 transition-all"></div>
+                            <img 
+                                src={venue.imageUrl} 
+                                alt={venue.name} 
+                                className="w-full h-[400px] object-cover rounded-lg shadow-xl" 
+                            />
+                        </div>
+
+                        {/* Content Side */}
+                        <div className="w-full md:w-1/2 space-y-6">
+                        <h2 className="text-3xl font-serif font-bold text-tcl-blue">{venue.name}</h2>
+                        <div className="space-y-2 text-sm text-gray-500">
+                            <div className="flex items-start">
+                                <MapPin size={18} className="text-tcl-gold mr-2 mt-1 min-w-[18px]" />
+                                <span>{venue.location}</span>
+                            </div>
+                            <div className="flex items-start">
+                                <Clock size={18} className="text-tcl-gold mr-2 mt-1 min-w-[18px]" />
+                                <span>{venue.hours}</span>
+                            </div>
+                        </div>
+                        
+                        <p className="text-gray-600 leading-relaxed">
+                            {venue.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-2 pt-2">
+                            {venue.features.map(feature => (
+                            <span key={feature} className="px-3 py-1 bg-gray-100 text-gray-600 text-xs uppercase tracking-wider rounded-full">
+                                {feature}
+                            </span>
+                            ))}
+                        </div>
+
+                        <button className="text-tcl-gold font-bold uppercase text-sm border-b-2 border-tcl-gold hover:text-yellow-600 hover:border-yellow-600 transition-colors pb-1">
+                            View Menu
+                        </button>
+                    </div>
+                </div>
+                ))}
+            </div>
+        </div>
+        {/* <div
             className="w-full min-h-screen bg-white dark:bg-black transition-colors duration-200"
         >
-            {/* Header */}
+            
             <div className="container mx-auto px-4 text-center my-20" data-oid="rlamoge">
                     <h1 className="text-5xl md:text-6xl font-bold mb-4" data-oid="t::qrty">
                         Food & Drink
@@ -27,7 +119,6 @@ export default function Page() {
             >
             </div>
 
-            {/* Oasis Pool Bar Section */}
             <section className="py-16 bg-blue-50 dark:bg-gray-900" data-oid="2.ljszm">
                 <div className="container mx-auto px-4" data-oid="k:vk1s3">
                     <div className="grid md:grid-cols-2 gap-12 items-center" data-oid="52l7_hd">
@@ -149,7 +240,6 @@ export default function Page() {
                 </div>
             </section>
 
-            {/* Fresh Fresh Café Section */}
             <section className="py-16 bg-white dark:bg-gray-800" data-oid="omn2rgn">
                 <div className="container mx-auto px-4" data-oid="qc-_rvb">
                     <div className="grid md:grid-cols-2 gap-12 items-center" data-oid="5i:8jom">
@@ -194,14 +284,7 @@ export default function Page() {
 
                         <div className="order-1 md:order-2" data-oid="bhf2lbv">
                             <div className="flex items-center mb-6" data-oid="g6rsmv4">
-                                {/* <div
-                                    className="bg-gray-600 text-white px-4 py-2 rounded-full mr-4"
-                                    data-oid="0:6kl9c"
-                                >
-                                    <span className="text-2xl" data-oid="jf7_bw.">
-                                        
-                                    </span>
-                                </div> */}
+                                
                                 <h2
                                     className="text-4xl font-bold text-gray-600"
                                     data-oid="zruv.t9"
@@ -333,7 +416,6 @@ export default function Page() {
                 </div>
             </section>
 
-            {/* Kalipso Restaurant Section */}
             <section className="py-16 bg-blue-50 dark:bg-gray-900" data-oid="ip-i5s0">
                 <div className="container mx-auto px-4" data-oid="zs7tpsk">
                     <div className="text-center mb-12" data-oid="xy-tlzs">
@@ -514,7 +596,6 @@ export default function Page() {
                 </div>
             </section>
 
-            {/* Call to Action */}
             <section
                 className="py-16 bg-gradient-to-r from-blue-600 to-teal-600 text-white"
                 data-oid="38g66.."
@@ -543,8 +624,7 @@ export default function Page() {
                     </div>
                 </div>
             </section>
-            <ChatButton />
-            <FooterWhite />
-        </div>
+        </div> */}
+        </>
     );
 }

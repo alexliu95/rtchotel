@@ -1,4 +1,5 @@
 'use client'
+import Image from "next/image";
 import BookingWidget from "../../components/BookingWidget";
 import ChatButton from "../../components/ChatButton";
 import Footer from "../../components/Footer";
@@ -14,7 +15,7 @@ export default function Page() {
             data-oid="xe67850"
         >
             {/* Header */}
-            <div className="container mx-auto px-4 text-center my-20" data-oid="rlamoge">
+            {/* <div className="container mx-auto px-4 text-center my-20" data-oid="rlamoge">
                 <h1 className="text-5xl md:text-6xl font-bold mb-4" data-oid="t::qrty">
                     Beach Club
                 </h1>
@@ -26,10 +27,40 @@ export default function Page() {
                 className="bg-gradient-to-r from-blue-600 to-teal-600 text-white py-16 bg-[url('/assets/beachclub/beach-club-hero.jpg')] bg-cover bg-center"
                 data-oid="gnjyn_p"
             >
-            </div>
+            </div> */}
 
             {/* Oasis Pool Bar Section */}
+            <section className="py-16 bg-white dark:bg-gray-900" data-oid="2.ljszm">
+                <div className="flex gap-8 justify-center items-center mb-12">
+                    <div>
+                        <Image src="/assets/beachclub/beach-club.png" width="300" height="200" alt="Tropical Casa Laguna Beach Club" className="rounded-lg"/>
+                    </div>
+                    <div>
+                        <Image src="/assets/beachclub/kalipso.png" width="300" height="200" alt="Kalipso Restaurant Beach View" className="rounded-lg"/>
+                    </div>
+                </div>
+                <div className="container mx-auto px-4" data-oid="k:vk1s3">
+                    <h2 className="text-3xl font-bold text-center mb-8 text-gray-600 dark:text-white">Tropical Casa Laguna Beach Club & Kalipso Restaurant</h2>
+                    <p>Just steps away, you'll find Kalipso Restaurant, the official affiliated partner of the Beach Club. Here, 
+                        beachside dining meets local flavor with a menu featuring fresh seafood, Mediterranean favorites, tropical cocktails, 
+                        and chilled music vibes—all served with stunning views of the sea.</p>
+                    <p>Whether you're sipping a cocktail at sunset or enjoying lunch with your feet in the sand, 
+                        Tropical Casa Laguna Beach Club and Kalipso Restaurant offer the perfect blend of beach life and local flavor—right where Cabarete comes alive.
+                    </p>
+                </div>
+            </section>
             <section className="py-16 bg-blue-50 dark:bg-gray-900" data-oid="2.ljszm">
+                <div className="flex gap-8 justify-center items-center mb-12">
+                    <div>
+                        <Image src="/assets/beachclub/beach-club-1.jpg" width="300" height="200" alt="Tropical Casa Laguna Beach Club" className="rounded-lg"/>
+                    </div>
+                    <div>
+                        <Image src="/assets/beachclub/beach-club.png" width="300" height="200" alt="Tropical Casa Laguna Beach Club" className="rounded-lg"/>
+                    </div>
+                    <div>
+                        <Image src="/assets/beachclub/beach-club-2.jpg" width="300" height="200" alt="Kalipso Restaurant Beach View" className="rounded-lg"/>
+                    </div>
+                </div>
                 <div className="container mx-auto px-4" data-oid="k:vk1s3">
                     <div className="grid md:grid-cols-2 gap-12 items-center" data-oid="52l7_hd">
                         <div data-oid="oa_ey8e">
@@ -72,19 +103,6 @@ export default function Page() {
                     </div>
                 </div>
             </section>
-            <section className="py-16 bg-white dark:bg-gray-900" data-oid="2.ljszm">
-                <div className="container mx-auto px-4" data-oid="k:vk1s3">
-                    <h2 className="text-3xl font-bold text-center mb-8 text-gray-600 dark:text-white">Tropical Casa Laguna Beach Club & Kalipso Restaurant</h2>
-                    <p>Just steps away, you'll find Kalipso Restaurant, the official affiliated partner of the Beach Club. Here, 
-                        beachside dining meets local flavor with a menu featuring fresh seafood, Mediterranean favorites, tropical cocktails, 
-                        and chilled music vibes—all served with stunning views of the sea.</p>
-                    <p>Whether you're sipping a cocktail at sunset or enjoying lunch with your feet in the sand, 
-                        Tropical Casa Laguna Beach Club and Kalipso Restaurant offer the perfect blend of beach life and local flavor—right where Cabarete comes alive.
-                    </p>
-                </div>
-            </section>
-            <ChatButton />
-            <FooterWhite />
         </div>
     );
 }

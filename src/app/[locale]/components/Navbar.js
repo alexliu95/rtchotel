@@ -44,7 +44,7 @@ export default function Navbar() {
                     <div className="col-span-5 md:col-span-10 lg:hidden hover:bg-white hover:fill-white active:bg-gray-400" onClick={()=>setIsMobileMenuShow(!isMobileMenuShow)}>
                         <svg width="30px" height="30px" fill="#000000" viewBox="0 0 24 24" id="menu-alt-3" data-name="Flat Color" xmlns="http://www.w3.org/2000/svg" className="icon flat-color hover:fill-white"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><rect id="primary" x="2" y="2" width="20" height="20" rx="2" style={{fill: "#000000"}}></rect><path id="secondary" d="M17,17H7a1,1,0,0,1,0-2H17a1,1,0,0,1,0,2Zm0-4H7a1,1,0,0,1,0-2H17a1,1,0,0,1,0,2Zm0-4H7A1,1,0,0,1,7,7H17a1,1,0,0,1,0,2Z" style={{fill: "#c4c4c4"}}></path></g></svg>
                     </div>
-                    <div className="hidden lg:block lg:col-span-11 font-roboto text-[0.8em] font-bold cursor-pointer">
+                    <div className="hidden lg:block lg:col-span-11 font-serif text-[0.8em] font-bold cursor-pointer">
                         <ul className="flex gap-6">
                             <li><Link className="hover:text-white hover:bg-[#d4bb2e] px-3 py-5 transition select-none uppercase" href="/">{t('home')}</Link></li>
                             <li><Link className="hover:text-white hover:bg-[#d4bb2e] px-3 py-5 transition select-none uppercase" href="/pages/accomodations">{t('accomodations')}</Link></li>

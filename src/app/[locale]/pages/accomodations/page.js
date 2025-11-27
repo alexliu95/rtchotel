@@ -6,54 +6,90 @@ import { Navigation } from "../../components/Navigation";
 import { Hero } from "../../components/Hero";
 import BookingWidget from "../../components/BookingWidget";
 
+const rooms = [
+	{
+		id: '1',
+		name: 'Superior 1 King Bed Mountain View',
+		description: 'Relax in comfort with stunning views of the lush mountains. Includes free high-speed internet and modern amenities.',
+		price: '$120 / night',
+		imageUrl: '/assets/accomodations/room-1.jpg',
+		amenities: ['Free WiFi', 'Air Conditioning', 'King Bed', 'Mountain View']
+	},
+	{
+		id: '2',
+		name: 'Superior 1 King Bed Garden View',
+		description: 'Immerse yourself in our tropical gardens. This serene room offers a private balcony and spacious layout.',
+		price: '$145 / night',
+		imageUrl: '/assets/accomodations/room-2.jpg',
+		amenities: ['Free WiFi', 'Garden Access', 'King Bed', 'Private Balcony']
+	},
+	{
+		id: '3',
+		name: 'Superior 1 King Pool View',
+		description: 'Direct views of our shimmering pools. The perfect choice for those who love to be close to the water.',
+		price: '$165 / night',
+		imageUrl: '/assets/accomodations/room-3.jpg',
+		amenities: ['Free WiFi', 'Pool View', 'King Bed', 'Minibar']
+	}
+];
+
 export default function Accomodations() {
 
 	return (
 		<div className="">
 			<div className="content">
-				<div className="w-full py-10">
-					<div className="text-center w-2/3 mx-auto">
-						<h1 className="title text-3xl font-bold text-[#d4b14e] font-['Montserrat']">AMENITIES</h1>
-						<div className="w-2/3 mx-auto"></div>
-                        <h2 className="title text-3xl font-bold text-cyan-600 font-['Montserrat'] text-left">OASIS POOL BAR</h2>
-						<div className="font-mono my-4 text-left mx-auto">
-                            <p className="font-bold">The Oasis Bar – A Poolside Paradise</p>
-							<p>Nestled within the shimmering blue waters of the main resort pool, The Oasis Bar redefines relaxation with its one-of-a-kind swim-up 
-                                design. Perfectly blending luxury with convenience, this vibrant bar allows guests to sip on handcrafted cocktails, savor refreshing mocktails, 
-                                or enjoy a crisp cold beer—all without leaving the water.
-                            </p>
-							<p>Guests can relax on submerged stools, feeling the cool embrace of the water as they socialize or unwind. The bar menu offers a diverse 
-                                selection of tropical drinks, fine wines, and premium spirits, complemented by a light bites menu that includes fresh ceviche, artisanal 
-                                flatbreads, and tropical fruit platters.
-                            </p>
-							<p>Designed to be the heart of the pool area, The Oasis Bar is not just a place to refresh but also a social hub for resort guests. Whether 
-                                enjoying a mid-afternoon break or toasting an unforgettable evening, every moment spent at The Oasis Bar becomes part of the ultimate 
-                                vacation experience
-                            </p>
-						</div>
-						<div className="font-mono my-4 text-left mx-auto">
-							Cabarete beach is world famous for Surfing; Windsurfing, Kitesurfing, Foil surfing & Wing Foiling We have it all for the most 
-							active athletic tourists but we area also great for a relaxing family vacation on the soft sand and warm sea water. The central 
-							beach just steps from our resort - Cabarete Beach, has a well-developed infrastructure. The beaches are clean, covered with 
-							golden sand and surrounded by the greenery of royal palms.
-						</div>
-                        <div className="flex w-full"><Image src="/assets/accomodations/genghis.png" width="200" height="50" alt="Genghis" className="mx-auto" /></div>
-						<div className="font-mono my-4 text-left mx-auto">
-                            <p>Welcome to Genghis Wang Chinese Cuisine, where the grandeur of ancient Chinese traditions meets the vibrant flavors of modern culinary 
-                                artistry. Inspired by the legendary tales of Genghis Wang, a fictional explorer and gastronomic pioneer, our restaurant celebrates the rich 
-                                diversity of Chinese cuisine.
-                            </p>
-                            <p>The menu at Genghis Wang is a tribute to China’s culinary heritage, offering a journey through its diverse regions. From the bold and spicy 
-                                dishes of Sichuan to the delicate and aromatic flavors of Cantonese cuisine, every dish is crafted with authenticity and passion. Signature 
-                                dishes include savory Peking duck, fiery mapo tofu, handmade dumplings, and fragrant tea-smoked ribs, all prepared with the finest 
-                                ingredients and time-honored techniques.
-                            </p>
-                            <p>At Genghis Wang Chinese Cuisine, we invite you to savor a feast fit for emperors, where every meal is a celebration of taste, tradition, and 
-                                togetherness. Join us and embark on a flavorful journey through the heart of China
-                            </p>
-						</div>
+				<div className="w-full">
+					{/* Header */}
+					<div className="bg-gray-100 py-16 text-center">
+						<h1 className="text-4xl font-serif font-bold text-gray-800 mb-4">Accommodations</h1>
+						<p className="text-gray-600 max-w-2xl mx-auto">
+						Discover our range of comfortable and elegant rooms, designed to be your home away from home.
+						</p>
 					</div>
-				</div>
+
+					{/* Room List */}
+					<section className="bg-white w-2/3 mx-auto">
+						<div className="container mx-auto px-4 py-12">
+							<div className="space-y-12">
+								{rooms.map((room) => (
+									<div key={room.id} className="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden border border-gray-100">
+									<div className="md:w-1/3">
+										<img src={room.imageUrl} alt={room.name} className="w-full h-full object-cover min-h-[250px]" />
+									</div>
+									<div className="md:w-2/3 p-8 flex flex-col justify-between">
+										<div>
+										<h3 className="text-2xl font-serif font-bold text-gray-800 mb-2">{room.name}</h3>
+										<div className="flex space-x-4 mb-4 text-gray-500 text-sm">
+											{room.amenities.map(amenity => (
+											<span key={amenity} className="flex items-center">
+												<span className="w-1 h-1 bg-tcl-gold rounded-full mr-2"></span>
+												{amenity}
+											</span>
+											))}
+										</div>
+										<p className="text-gray-600 mb-6">{room.description}</p>
+										</div>
+										
+										<div className="flex items-center justify-between border-t border-gray-100 pt-6 mt-auto">
+										<div className="text-sm text-gray-500">
+											<a href="#" className="underline hover:text-tcl-blue">Room Amenities, details and policies</a>
+										</div>
+										<div className="flex flex-col items-end">
+											<span className="text-xs text-green-600 font-bold mb-1 flex items-center">
+											<span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span> Today's Low Rate
+											</span>
+											<button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold py-3 px-8 rounded uppercase text-sm tracking-wide transition-colors">
+											Check Rates
+											</button>
+										</div>
+										</div>
+									</div>
+									</div>
+								))}
+							</div>
+						</div>
+					</section>
+					
 				<div className="flex justify-center">
 					{/* <div className="grid grid-cols-2 gap-4 px-4">
 						<div className="aspect-[4/3]"><Image src="/assets/home/pic1.png" width={640} height={480} alt="pic1" className="object-cover" /></div>
@@ -62,10 +98,8 @@ export default function Accomodations() {
 						<div className="aspect-[4/3]"><Image src="/assets/home/pic4.png" width={640} height={480} alt="pic4" className="object-cover" /></div>
 					</div> */}
 				</div>
-				
 			</div>
-			<ChatButton />
-			<FooterWhite />
-		</div>
+		</div>	
+		</div>		
 	);
 }

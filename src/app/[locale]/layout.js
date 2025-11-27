@@ -6,6 +6,7 @@ import FooterWhite from "./components/FooterWhite";
 import ChatButton from "./components/ChatButton";
 import { Navigation } from "./components/Navigation";
 import Header from "./components/Header";
+import SimpleHeader from "./components/SimpleHeader";
  
 export default async function LocaleLayout({
   children,
@@ -21,8 +22,12 @@ export default async function LocaleLayout({
     <html lang={locale}>
       <body>
         <NextIntlClientProvider>
-          <Header />
+          {/* <Header /> */}
+          {/* <SimpleHeader /> */}
+          {/* <Header /> */}
           {children}
+          <ChatButton />
+          {/* <FooterWhite /> */}
         </NextIntlClientProvider>
       </body>
     </html>

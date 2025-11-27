@@ -6,17 +6,14 @@ import BookingWidget from './BookingWidget';
 import HeroNav from './HeroNav';
 import SimpleHero from './SimpleHero';
 
-export default function Header() {
+export default function SimpleHeader() {
 
 
     return (
         <>
             <Navigation />
             <div className="relative">
-                <Hero />
-                {/* <HeroNav /> */}
-                {/* <SimpleHero /> */}
-                <BookingWidget />
+                <SimpleHero />
             </div>
         </>
     );

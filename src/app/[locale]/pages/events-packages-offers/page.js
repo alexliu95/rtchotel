@@ -27,8 +27,6 @@ export default function EventsPackagesOffers() {
 					</div>
 				</div>
 			</div>
-			<ChatButton />
-			<FooterWhite />
 		</div>
 	);
 }
