@@ -77,7 +77,7 @@ export default function HeroNav() {
                             <li><Link className="hover:text-white hover:bg-blue-400/60 px-3 py-5 transition select-none uppercase" href="/pages/events-packages-offers">{t('events-packages-offers')}</Link></li>
                             <li><Link className="hover:text-white hover:bg-blue-400/60 px-3 py-5 transition select-none uppercase" href="/pages/residences">{t('residences')}</Link></li>
                             <li><Link className="hover:text-white hover:bg-blue-400/60 px-3 py-5 transition select-none uppercase" href="/pages/residences">{t('live-webcam')}</Link></li>
-                            <li><Link className="hover:text-white hover:bg-blue-400/60 px-3 py-5 transition select-none uppercase" href="/book-now">{t('book-now')}</Link></li>
+                            <li><Link className="hover:text-white hover:bg-blue-400/60 px-3 py-5 transition select-none uppercase" href="https://direct-book.com/properties/HotelTropicalCasaLagunaDirect">{t('book-now')}</Link></li>
                             {/* <li><Link className="hover:text-gray-400 transition select-none" href="https://rewardsholiday.com/?page_id=21">CUSTOMERLOGIN</Link></li> */}
                         </ul>                   
                     </div>

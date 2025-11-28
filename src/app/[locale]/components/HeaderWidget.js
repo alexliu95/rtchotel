@@ -2,21 +2,21 @@
 import { useMemo, useState } from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Users, Tag } from "lucide-react";
-import { Card } from "./ui/card";
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Popover, PopoverTrigger, PopoverContent } from "./ui/popover";
-// import { Calendar } from "./ui/calendar"; // ← shadcn/ui 的 Calendar 组件（react-day-picker）
 import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
-// import { cn } from "./lib/utils"; // 如果没有 cn，直接用字符串拼 class 也行
+import { useRouter } from "next/navigation";
 
 export const HeaderWidget = () => {
   const [open, setOpen] = useState(false);
   const [range, setRange] = useState({
-    from: new Date(), // 2025-10-07
-    to:   new Date() + 2, // 2025-10-08
+    from: new Date(),
+    to:   new Date(new Date().setDate(new Date().getDate() + 2))
   });
+  const [guests, setGuests] = useState(2);
+
+  const router = useRouter();
 
   // 展示在输入框里的文本
   const rangeLabel = useMemo(() => {
@@ -39,7 +39,6 @@ export const HeaderWidget = () => {
   return (
     <div className="absolute top-1/2 -translate-y-1/2 left-1/2 z-10 w-[80%] max-w-4xl -translate-x-1/2 p-2 opacity-100 md:p-3">
       <div className="grid gap-4 md:grid-cols-3 items-end">
-
         {/* Dates（一次选择起止日期，弹出两个月面板） */}
         <div className="md:col-span-1 flex flex-col gap-2">
           <Popover open={open} onOpenChange={setOpen}>
@@ -90,11 +89,11 @@ export const HeaderWidget = () => {
         <div className="flex flex-col gap-2">
           <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-2">
             <Users className="h-4 w-4 text-muted-foreground" />
-            <select className="w-full border-0 bg-transparent text-sm focus:outline-none">
-              <option>2 Adults</option>
-              <option>1 Adult</option>
-              <option>3 Adults</option>
-              <option>4 Adults</option>
+            <select className="w-full border-0 bg-transparent text-sm focus:outline-none" onChange={(e) => setGuests(e.target.value)} value={guests}>
+              <option value={2}>2 Adults</option>
+              <option value={1}>1 Adult</option>
+              <option value={3}>3 Adults</option>
+              <option value={4}>4 Adults</option>
             </select>
           </div>
         </div>
@@ -106,8 +105,7 @@ export const HeaderWidget = () => {
             size="lg"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white cursor-pointer"
             onClick={() => {
-              // 这里提交时拿到 from/to： range.from / range.to
-              // 例如：console.log(range)
+              router.push(`https://direct-book.com/properties/HotelTropicalCasaLagunaDirect?check_in_date=${format(range.from, "MM-dd-yyyy")}&check_out_date=${format(range.to, "MM-dd-yyyy")}&number_adults=${guests}`);
             }}
           >
             Book Now

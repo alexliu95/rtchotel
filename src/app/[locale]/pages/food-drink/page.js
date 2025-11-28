@@ -1,18 +1,16 @@
 'use client'
 import { Clock, MapPin } from "lucide-react";
-import BookingWidget from "../../components/BookingWidget";
-import ChatButton from "../../components/ChatButton";
-import Footer from "../../components/Footer";
-import FooterWhite from "../../components/FooterWhite";
-import { Hero } from "../../components/Hero";
-import Navbar from "../../components/Navbar";
-import { Navigation } from "../../components/Navigation";
 
 const venues = [
     {
         id: 'oasis',
         name: 'Oasis Pool Bar',
-        description: 'Nestled within the shimmering blue waters of the main resort pool, The Oasis Pool Bar redefines relaxation with its one-of-a-kind swim-up design. Perfectly blending luxury with convenience, sip on handcrafted cocktails without leaving the water.',
+        description: ['Nestled within the shimmering blue waters of the main resort pool, The Oasis Pool Bar redefines relaxation with its one-of-a-kind swim-up design. Perfectly blending luxury with convenience, sip on handcrafted cocktails without leaving the water.',
+            <div className="my-2" key={1} />,
+            'Guests can relax on submerged stools, feeling the cool embrace of the water as they socialize or unwind. The bar menu offers a diverse selection of tropical drinks, fine wines, and premium spirits',
+            <div className="my-2" key={2} />,
+            'Designed to be the heart of the pool area, The Oasis Bar is not just a place to refresh but also a social hub for resort guests. Whether enjoying a mid-afternoon break or toasting an unforgettable evening, every moment spent at The Oasis Bar becomes part of the ultimate vacation experience.'
+        ],
         location: 'In the heart of the resort pool area',
         hours: 'Mon-Tue: 1pm - 7pm, Wed-Sun: 12pm - 7pm',
         imageUrl: '/assets/foodndrink/oasis.jpg',
@@ -21,7 +19,12 @@ const venues = [
     {
         id: 'fresh',
         name: 'Fresh Fresh Café',
-        description: 'A bright, health-focused spot known for fresh, flavorful meals made with organic ingredients. Catering especially well to vegetarians and vegans with smoothie bowls, wraps, and uplifting juices.',
+        description: ['A bright, health-focused spot known for fresh, flavorful meals made with organic ingredients. Catering especially well to vegetarians and vegans with smoothie bowls, wraps, and uplifting juices.'
+            ,<div className="my-2" key={1} />,
+            'Perfect for a nourishing breakfast or a light lunch after a morning swim or yoga session. The casual vibe and wholesome menu make Fresh Fresh Café a favorite among health-conscious guests.'
+            ,<div className="my-2" key={2} />,
+            'Whether grabbing a quick smoothie or settling in for a relaxed meal, Fresh Fresh Café offers a refreshing dining experience that fuels both body and mind.'
+        ],
         location: 'Front of resort on main street',
         hours: 'Mon-Tue: 7:30am - 7pm, Wed-Sun: 7:30am - 9pm',
         imageUrl: '/assets/foodndrink/freshfresh.png',
@@ -55,7 +58,7 @@ export default function Page() {
 
             <div className="container mx-auto px-4 py-12 space-y-24">
                 {venues.map((venue, index) => (
-                <div key={venue.id} className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-center`}>
+                <div key={venue.id} className={`flex flex-col ${index % 2 !== 0 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-12 items-start`}>
                     
                     {/* Image Side */}
                     <div className="w-full md:w-1/2 relative group">
@@ -93,13 +96,14 @@ export default function Page() {
                             ))}
                         </div>
 
-                        <button className="text-tcl-gold font-bold uppercase text-sm border-b-2 border-tcl-gold hover:text-yellow-600 hover:border-yellow-600 transition-colors pb-1">
-                            View Menu
-                        </button>
+                        {/* <button className="cursor-pointer text-tcl-gold font-bold uppercase text-sm border-b-2 border-tcl-gold hover:text-yellow-600 hover:border-yellow-600 transition-colors pb-1">
+                            View More
+                        </button> */}
                     </div>
                 </div>
                 ))}
             </div>
+
         </div>
         {/* <div
             className="w-full min-h-screen bg-white dark:bg-black transition-colors duration-200"

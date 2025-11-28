@@ -7,7 +7,6 @@ import heroPool from "../../../../public/slides/CabareteBeach.jpg";
 import heroBeach from "../../../../public/slides/BeachBanner.jpg";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import Navbar from "./Navbar";
 import HeroNav from "./HeroNav";
 
 const slides = [

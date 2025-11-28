@@ -1,14 +1,9 @@
 'use client'
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import { Button } from "@/components/ui/button";
-import heroLobby from "../../../../public/slides/HotelBirdView.jpg";
-import heroPool from "../../../../public/slides/CabareteBeach.jpg";
 import heroBeach from "../../../../public/slides/BeachBanner.jpg";
 import { Button } from "./ui/button";
 import Image from "next/image";
-import Navbar from "./Navbar";
-import HeroNav from "./HeroNav";
 
 const slides = [
 //   { image: heroLobby, alt: "Luxury hotel lobby" },

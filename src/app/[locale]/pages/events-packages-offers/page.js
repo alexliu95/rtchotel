@@ -1,13 +1,4 @@
 'use client'
-import Image from "next/image";
-import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import FooterWhite from "../../components/FooterWhite";
-import ChatButton from "../../components/ChatButton";
-import { Navigation } from "../../components/Navigation";
-import { Hero } from "../../components/Hero";
-import BookingWidget from "../../components/BookingWidget";
 
 export default function EventsPackagesOffers() {
 

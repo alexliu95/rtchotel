@@ -1,13 +1,5 @@
 'use client'
-import Image from "next/image";
-import { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import { Navigation } from "../../components/Navigation";
-import FooterWhite from "../../components/FooterWhite";
-import ChatButton from "../../components/ChatButton";
-import { Hero } from "../../components/Hero";
-import BookingWidget from "../../components/BookingWidget";
+
 import { CheckCircle, Heart, Home, Layout, Mail, MapPin, Phone, Scissors, Sparkles } from "lucide-react";
 
 export default function Residences() {
@@ -242,9 +234,9 @@ export default function Residences() {
                                 </div>
                             </div>
                             <div className="bg-white p-10 rounded-xl shadow-lg text-center md:text-left">
-                                <div className="flex flex-col items-center md:items-start space-y-6">
-                                    <div className="mb-4">
-                                        <img src="https://picsum.photos/seed/logo_gold/100/100" alt="Logo" className="w-16 h-16 object-contain" />
+                                <div className="flex flex-col items-center md:items-start space-y-6 justify-center">
+                                    <div className="mb-0 w-full">
+                                        <img src="/logo.png" alt="Logo" className="w-40 h-30 object-contain" />
                                     </div>
                                     <h3 className="text-2xl font-serif font-bold text-gray-800">Tropical Casa Laguna</h3>
                                     <div className="space-y-3 text-gray-600">
@@ -258,12 +250,14 @@ export default function Residences() {
                                         </p>
                                         <p className="flex items-center justify-center md:justify-start">
                                             <Mail className="text-tcl-gold mr-2 flex-shrink-0" size={18} />
-                                            <a href="mailto:sales@tropicalcasalaguna.com" className="hover:text-tcl-gold transition-colors">sales@tropicalcasalaguna.com</a>
+                                            <a href="mailto:reservations@tropicalcasalaguna.com" className="hover:text-tcl-gold transition-colors">reservations@tropicalcasalaguna.com</a>
                                         </p>
                                     </div>
-                                    <button className="w-full bg-yellow-500 text-white font-bold py-3 rounded hover:bg-yellow-600 transition-colors uppercase tracking-wider shadow-md mt-4">
+                                    <a href="mailto:info@tropicalcasalaguna.com" className="w-full hover:text-tcl-gold transition-colors">
+                                    <button className="w-full cursor-pointer bg-yellow-500 text-white font-bold py-3 rounded hover:bg-yellow-600 transition-colors uppercase tracking-wider shadow-md mt-4">
                                         Contact Sales
                                     </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

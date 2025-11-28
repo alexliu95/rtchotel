@@ -1,12 +1,7 @@
 'use client'
 import Image from "next/image";
 import { useState } from "react";
-import ChatButton from "./components/ChatButton";
-import { Hero } from "./components/Hero";
-import BookingWidget from "./components/BookingWidget";
 import FooterWhite from "./components/FooterWhite";
-import { Navigation } from "./components/Navigation";
-import { Slider } from "./components/Slider";
 import Header from "./components/Header";
 import { MapPin, Palmtree, Wind } from "lucide-react";
 import Link from "next/link";
@@ -159,19 +154,34 @@ export default function Home() {
 						<div className="aspect-[4/3]"><Image src="/assets/home/pic4.png" width={640} height={480} alt="pic4" className="rounded-lg shadow-lg w-full h-64 object-cover" /></div>
 					</div>
 				</div>
-				<section className="my-20">
+				<section className="my-20 container mx-auto px-4">
 					<div className="w-2/3 mx-auto"></div>
-						<div className="font-mono my-4 w-2/3 text-center mx-auto">
-							Cabarete is a vibrant beach town on the northern coast of the Dominican Republic, 
-							in the province of Puerto Plata. It lies along the Atlantic shoreline and is a short 18 km 
-							(11 mi)/25-minute drive from Puerto Plata international airport.
+						
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+						<div className="space-y-4">
+							{/* Placeholder Maps */}
+							<div className="grid grid-cols-2 gap-2">
+								<div>
+									<img src="/assets/residences/map-1.jpg" className="w-full h-52 object-cover rounded shadow mb-2" alt="Flight Map" />
+									<img src="/assets/residences/map-2.jpg" className="w-full h-56 object-cover rounded shadow mt-2" alt="Regional Map" />
+								</div>
+								
+								<img src="/assets/residences/map-3.jpg" className=" w-full h-110 object-cover rounded shadow" alt="Satellite View" />
+							</div>
 						</div>
-						<div className="w-2/3 mx-auto">
-							Cabarete is famed for its water-sports culture, especially kiteboarding, windsurfing, and surfing, 
-							and features a mix of coastal scenery, nearby lagoons, hills, and tropical surroundings. 
-							This laidback resort town has quickly become one of the most popular holiday destinations in the caribbean. 
+						<div className="bg-white p-10 rounded-xl shadow-lg text-center md:text-left">
+							<div className="font-mono my-4 w-2/3 mx-auto">
+								Cabarete is a vibrant beach town on the northern coast of the Dominican Republic, 
+								in the province of Puerto Plata. It lies along the Atlantic shoreline and is a short 18 km 
+								(11 mi)/25-minute drive from Puerto Plata international airport.
+							</div>
+							<div className="w-2/3 mx-auto">
+								Cabarete is famed for its water-sports culture, especially kiteboarding, windsurfing, and surfing, 
+								and features a mix of coastal scenery, nearby lagoons, hills, and tropical surroundings. 
+								This laidback resort town has quickly become one of the most popular holiday destinations in the caribbean. 
+							</div>
 						</div>
-					
+					</div>
 				</section>
 			</div>
 			<FooterWhite />

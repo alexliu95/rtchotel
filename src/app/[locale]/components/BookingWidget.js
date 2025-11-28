@@ -3,20 +3,23 @@ import { useMemo, useState } from "react";
 import { format } from "date-fns";
 import { Calendar as CalendarIcon, Users, Tag } from "lucide-react";
 import { Card } from "./ui/card";
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Popover, PopoverTrigger, PopoverContent } from "./ui/popover";
-// import { Calendar } from "./ui/calendar"; // ← shadcn/ui 的 Calendar 组件（react-day-picker）
 import { cn } from "@/lib/utils";
 import { Calendar } from "./ui/calendar";
-// import { cn } from "./lib/utils"; // 如果没有 cn，直接用字符串拼 class 也行
+import { Router } from "next/router";
+import { useRouter } from "next/navigation";
 
 export const BookingWidget = () => {
   const [open, setOpen] = useState(false);
   const [range, setRange] = useState({
-    from: new Date(2025, 9, 7), // 2025-10-07
-    to:   new Date(2025, 9, 8), // 2025-10-08
+    from: new Date(), // 2025-10-07
+    // 当前日期 + 2 天
+    to: new Date(new Date().setDate(new Date().getDate() + 2)), // 2025-10-09
   });
+  const [guests, setGuests] = useState(2);
+
+  const router = useRouter();
 
   // 展示在输入框里的文本
   const rangeLabel = useMemo(() => {
@@ -85,11 +88,6 @@ export const BookingWidget = () => {
               </div>
             </PopoverContent>
           </Popover>
-          {/* 如果你仍想分别展示 Check-in / Check-out 文本，可在这里渲染两行只读文本 */}
-          {/* <p className="text-xs text-muted-foreground">
-            Check-in: {range?.from ? format(range.from, "yyyy-MM-dd") : "--"} ·
-            Check-out: {range?.to ? format(range.to, "yyyy-MM-dd") : "--"}
-          </p> */}
         </div>
 
         {/* Guests */}
@@ -97,27 +95,14 @@ export const BookingWidget = () => {
           <label className="text-center text-lg font-medium text-muted-foreground">Guests</label>
           <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-2">
             <Users className="h-4 w-4 text-muted-foreground" />
-            <select className="w-full border-0 bg-transparent text-sm focus:outline-none">
-              <option>2 Adults</option>
-              <option>1 Adult</option>
-              <option>3 Adults</option>
-              <option>4 Adults</option>
+            <select className="w-full border-0 bg-transparent text-sm focus:outline-none" onChange={(e) => setGuests(e.target.value)} value={guests}>
+              <option value={2}>2 Adults</option>
+              <option value={1}>1 Adult</option>
+              <option value={3}>3 Adults</option>
+              <option value={4}>4 Adults</option>
             </select>
           </div>
         </div>
-
-        {/* Promo Code */}
-        {/* <div className="flex flex-col gap-2">
-          <label className="text-center text-lg font-medium text-muted-foreground">Promo Code</label>
-          <div className="flex items-center gap-2 rounded-lg bg-background px-3 py-2">
-            <Tag className="h-4 w-4 text-muted-foreground" />
-            <Input
-              type="text"
-              placeholder="Optional"
-              className="border-0 bg-transparent p-0 text-sm focus-visible:ring-0"
-            />
-          </div>
-        </div> */}
 
         {/* CTA */}
         <div>
@@ -126,8 +111,7 @@ export const BookingWidget = () => {
             size="lg"
             className="w-full bg-blue-500 hover:bg-blue-600 text-white cursor-pointer"
             onClick={() => {
-              // 这里提交时拿到 from/to： range.from / range.to
-              // 例如：console.log(range)
+              router.push(`https://direct-book.com/properties/HotelTropicalCasaLagunaDirect?check_in_date=${format(range.from, "MM-dd-yyyy")}&check_out_date=${format(range.to, "MM-dd-yyyy")}&number_adults=${guests}`);
             }}
           >
             Book Now

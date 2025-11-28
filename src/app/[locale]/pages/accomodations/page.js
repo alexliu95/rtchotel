@@ -1,10 +1,7 @@
 'use client'
-import Image from "next/image";
-import FooterWhite from "../../components/FooterWhite";
-import ChatButton from "../../components/ChatButton";
-import { Navigation } from "../../components/Navigation";
-import { Hero } from "../../components/Hero";
-import BookingWidget from "../../components/BookingWidget";
+
+import { useRouter } from "next/navigation";
+import { format } from "date-fns";
 
 const rooms = [
 	{
@@ -34,7 +31,7 @@ const rooms = [
 ];
 
 export default function Accomodations() {
-
+	const router = useRouter();
 	return (
 		<div className="">
 			<div className="content">
@@ -78,7 +75,8 @@ export default function Accomodations() {
 											<span className="text-xs text-green-600 font-bold mb-1 flex items-center">
 											<span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span> Today's Low Rate
 											</span>
-											<button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold py-3 px-8 rounded uppercase text-sm tracking-wide transition-colors">
+											<button className="bg-yellow-500 hover:bg-yellow-600 cursor-pointer text-white font-bold py-3 px-8 rounded uppercase text-sm tracking-wide transition-colors" 
+												onClick={() => {router.push(`https://direct-book.com/properties/HotelTropicalCasaLagunaDirect?check_in_date=${format(new Date(), "MM-dd-yyyy")}&check_out_date=${format(new Date(), "MM-dd-yyyy")}&number_adults=${2}`)}}>
 											Check Rates
 											</button>
 										</div>

@@ -1,12 +1,5 @@
 'use client'
 import Image from "next/image";
-import BookingWidget from "../../components/BookingWidget";
-import ChatButton from "../../components/ChatButton";
-import Footer from "../../components/Footer";
-import FooterWhite from "../../components/FooterWhite";
-import { Hero } from "../../components/Hero";
-import Navbar from "../../components/Navbar";
-import { Navigation } from "../../components/Navigation";
 
 export default function Page() {
     return (
@@ -14,21 +7,6 @@ export default function Page() {
             className="w-full min-h-screen bg-white dark:bg-black transition-colors duration-200"
             data-oid="xe67850"
         >
-            {/* Header */}
-            {/* <div className="container mx-auto px-4 text-center my-20" data-oid="rlamoge">
-                <h1 className="text-5xl md:text-6xl font-bold mb-4" data-oid="t::qrty">
-                    Beach Club
-                </h1>
-                <p className="text-xl md:text-2xl opacity-90" data-oid="nst_gk7">
-                    A Seaside Escape in the Heart of Cabarete
-                </p>
-            </div>
-            <div
-                className="bg-gradient-to-r from-blue-600 to-teal-600 text-white py-16 bg-[url('/assets/beachclub/beach-club-hero.jpg')] bg-cover bg-center"
-                data-oid="gnjyn_p"
-            >
-            </div> */}
-
             {/* Oasis Pool Bar Section */}
             <section className="py-16 bg-white dark:bg-gray-900" data-oid="2.ljszm">
                 <div className="flex gap-8 justify-center items-center mb-12">

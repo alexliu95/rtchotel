@@ -26,9 +26,9 @@ export const Navigation = () => {
 
     if (typeof window !== "undefined") {
         window.addEventListener("scroll", () => {
-        setIsScrolled(window.scrollY > getVH() * 0.8);
-        console.log("scrollY:", window.scrollY, " getVH:", getVH());
-        console.log(window.scrollY > getVH());
+            setIsScrolled(window.scrollY > getVH() * 0.8);
+            console.log("scrollY:", window.scrollY, " getVH:", getVH());
+            console.log(window.scrollY > getVH());
         });
     }
 
