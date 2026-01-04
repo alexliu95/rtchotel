@@ -1,8 +1,14 @@
-'use client'
+'use client';
 
-import { CheckCircle, Heart, Home, Layout, Mail, MapPin, Phone, Scissors, Sparkles } from "lucide-react";
+import { CheckCircle, Mail, MapPin, Phone } from "lucide-react";
+import { useMessages, useTranslations } from "next-intl";
 
 export default function Residences() {
+    const t = useTranslations('Residences');
+    const messages = useMessages();
+    const communityTags = messages?.Residences?.communityTags || [];
+    const liveStayPlayBullets = messages?.Residences?.liveStayPlayBullets || [];
+
     return (
         <>
             <div className="">
@@ -10,10 +16,10 @@ export default function Residences() {
                 <section className="bg-gray-900 text-white py-20 relative overflow-hidden">
                     <img src="https://picsum.photos/seed/aerial_coast/1920/800" className="absolute inset-0 w-full h-full object-cover opacity-30" alt="Aerial View" />
                     <div className="container mx-auto px-4 relative z-10 text-center">
-                        <h1 className="text-5xl font-serif font-bold mb-4 text-tcl-gold">The Residences</h1>
-                        <p className="text-xl max-w-2xl mx-auto">1 & 2 Bedroom Studios • Cabarete Beach • Dominican Republic</p>
+                        <h1 className="text-5xl font-serif font-bold mb-4 text-tcl-gold">{t('bannerTitle')}</h1>
+                        <p className="text-xl max-w-2xl mx-auto">{t('bannerSubtitle')}</p>
                         <button className="mt-8 px-8 py-3 bg-yellow-500 text-white font-bold rounded hover:bg-yellow-600 transition-colors">
-                            Request Information
+                            {t('bannerCta')}
                         </button>
                     </div>
                 </section>
@@ -23,10 +29,10 @@ export default function Residences() {
                 <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
                         <div className="text-center max-w-4xl mx-auto mb-12">
-                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-tcl-gold mb-2">A Tranquil Oasis</h2>
-                            <h3 className="text-2xl font-serif font-bold text-gray-800 uppercase tracking-wider mb-6">Between Ocean and Lagoon</h3>
+                            <h2 className="text-3xl md:text-4xl font-serif font-bold text-tcl-gold mb-2">{t('oasisTitle')}</h2>
+                            <h3 className="text-2xl font-serif font-bold text-gray-800 uppercase tracking-wider mb-6">{t('oasisSubtitle')}</h3>
                             <p className="text-gray-600 text-lg leading-relaxed">
-                            Tropical Casa Laguna is a peaceful and tranquil oasis located in the center of Cabarete on the shores of the north coast of the Dominican Republic. It is a short 25-minute drive from Puerto Plata international airport. This laidback resort town has quickly become one of the most popular holiday destinations in the Caribbean.
+                                {t('oasisDescription')}
                             </p>
                         </div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -49,23 +55,17 @@ export default function Residences() {
                                 </div>
                             </div>
                             <div className="lg:w-1/2">
-                                <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-4">Live, Stay & Play in Paradise.</h2>
+                                <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-4">{t('liveStayPlayTitle')}</h2>
                                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                                    Discover newly remodeled condo suites from <span className="font-bold text-gray-800">35 to 60 m²</span>, surrounded by lush gardens and resort-style amenities. Your tropical oasis awaits — perfect for living, relaxing, and embracing the vibrant Cabarete lifestyle.
+                                    {t('liveStayPlayDescription')}
                                 </p>
                                 <ul className="space-y-3">
-                                    <li className="flex items-center text-gray-700">
-                                        <CheckCircle size={20} className="text-green-500 mr-3" />
-                                        <span>Classic Comfort, tropical elegance</span>
-                                    </li>
-                                    <li className="flex items-center text-gray-700">
-                                        <CheckCircle size={20} className="text-green-500 mr-3" />
-                                        <span>Exclusive development</span>
-                                    </li>
-                                    <li className="flex items-center text-gray-700">
-                                        <CheckCircle size={20} className="text-green-500 mr-3" />
-                                        <span>Modern amenities</span>
-                                    </li>
+                                    {liveStayPlayBullets.map((item) => (
+                                        <li key={item} className="flex items-center text-gray-700">
+                                            <CheckCircle size={20} className="text-green-500 mr-3" />
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
                                 </ul>
                             </div>
                         </div>
@@ -78,9 +78,9 @@ export default function Residences() {
                                 </div>
                             </div>
                             <div className="lg:w-1/2">
-                                <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-2">Classic Comfort, Tropical Elegance</h2>
+                                <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-2">{t('classicComfortTitle')}</h2>
                                 <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                                    Tropical Casa Laguna Residences, Resort & Spa is an exclusive development blending contemporary comfort with the tranquility of a tropical oasis landscape.
+                                    {t('classicComfortDescription')}
                                 </p>
                                 <img src="/assets/residences/residences-12.jpg" className="w-full h-64 object-cover rounded shadow-lg mt-6" alt="Building Exterior" />
                             </div>
@@ -92,15 +92,14 @@ export default function Residences() {
                 <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
                         <div className="text-center max-w-4xl mx-auto mb-16">
-                            <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-6 uppercase tracking-widest">A Community Built for Living Well</h2>
+                            <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-6 uppercase tracking-widest">{t('communityTitle')}</h2>
                             <p className="text-gray-600 text-lg mb-8">
-                                Life here extends beyond your home. Our thoughtfully designed amenities enrich daily living, foster connection, and make every moment feel intentional.
+                                {t('communityDescription')}
                             </p>
                             <div className="flex flex-wrap justify-center gap-4 text-gray-700 font-medium">
-                                <span className="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">Three pools and a hot tub</span>
-                                <span className="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">Oasis Palm Terrace & swim-up bar</span>
-                                <span className="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">Steps from Cabarete Beach</span>
-                                <span className="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">Spa services on site</span>
+                                {communityTags.map((tag) => (
+                                    <span key={tag} className="bg-blue-50 px-4 py-2 rounded-full border border-blue-100">{tag}</span>
+                                ))}
                             </div>
                         </div>
                         
@@ -118,9 +117,9 @@ export default function Residences() {
                 <section className="py-20 bg-blue-50">
                     <div className="container mx-auto px-4">
                         <div className="mb-16">
-                            <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-6 uppercase">Bustling Cabarete Beach</h2>
+                            <h2 className="text-3xl font-serif font-bold text-tcl-gold mb-6 uppercase">{t('cabareteTitle')}</h2>
                             <p className="text-gray-700 text-lg leading-relaxed max-w-4xl">
-                                Just steps from our resort, Cabarete’s main beach features a vibrant, well-developed infrastructure with lively beachfront cafés, restaurants, and shops. The shoreline is pristine, framed by lush royal palms and kissed by tropical breezes — a paradise for both adventure seekers and those looking to simply relax and enjoy the Caribbean sun.
+                                {t('cabareteDescription')}
                             </p>
                             <img src="/assets/residences/residences-16.jpg" className="w-full h-[400px] object-cover rounded-lg shadow-xl mt-8" alt="Kitesurfing" />
                         </div>
@@ -133,9 +132,9 @@ export default function Residences() {
                                     </div>
                             </div>
                             <div className="md:w-1/2">
-                                <h3 className="text-2xl font-serif font-bold text-tcl-gold mb-4">Where Adventure Meets Relaxation</h3>
+                                <h3 className="text-2xl font-serif font-bold text-tcl-gold mb-4">{t('adventureTitle')}</h3>
                                 <p className="text-gray-700 text-lg leading-relaxed">
-                                    Cabarete Beach is world-famous for surfing, windsurfing, kitesurfing, and wing foiling — offering everything the active, athletic traveler could dream of. Yet it’s just as perfect for a peaceful family getaway, where you can unwind on soft golden sands and swim in warm, gentle waters. It's a place where every day invites you to live free, feel alive, and connect with nature.
+                                    {t('adventureDescription')}
                                 </p>
                             </div>
                         </div>
@@ -145,20 +144,20 @@ export default function Residences() {
                 {/* Floor Plans */}
                 <section className="py-20 bg-white">
                     <div className="container mx-auto px-4">
-                        <h2 className="text-3xl font-serif font-bold text-center text-gray-800 mb-12">Floor Plans & Availability</h2>
+                        <h2 className="text-3xl font-serif font-bold text-center text-gray-800 mb-12">{t('floorPlansTitle')}</h2>
                         
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
                             {/* 2nd Floor */}
                             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                                <h3 className="text-xl font-bold text-gray-800 mb-4 border-b pb-2">2nd Floor</h3>
+                                <h3 className="text-xl font-bold text-gray-800 mb-4 border-b pb-2">{t('secondFloorTitle')}</h3>
                                 <div className="mb-6">
                                     <img src="/assets/residences/floorplan-1.jpg" className="w-full h-auto object-contain mb-4 border rounded bg-gray-50" alt="2nd Floor Plan" />
                                 </div>
                                 <table className="w-full text-center">
                                     <thead>
                                         <tr className="bg-gray-100">
-                                            <th className="py-2">Unit</th>
-                                            <th className="py-2">Area (m²)</th>
+                                            <th className="py-2">{t('unitLabel')}</th>
+                                            <th className="py-2">{t('areaLabel')}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -174,22 +173,22 @@ export default function Residences() {
                                     </tbody>
                                 </table>
                                 <div className="flex gap-4 mt-4 text-xs font-bold uppercase justify-center">
-                                    <span className="flex items-center"><span className="w-3 h-3 bg-blue-100 border border-blue-200 mr-2"></span> Pool View</span>
-                                    <span className="flex items-center"><span className="w-3 h-3 bg-green-100 border border-green-200 mr-2"></span> Courtyard View</span>
+                                    <span className="flex items-center"><span className="w-3 h-3 bg-blue-100 border border-blue-200 mr-2"></span> {t('poolView')}</span>
+                                    <span className="flex items-center"><span className="w-3 h-3 bg-green-100 border border-green-200 mr-2"></span> {t('courtyardView')}</span>
                                 </div>
                             </div>
 
                             {/* 1st Floor */}
                             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                                <h3 className="text-xl font-bold text-gray-800 mb-4 border-b pb-2">1st Floor</h3>
+                                <h3 className="text-xl font-bold text-gray-800 mb-4 border-b pb-2">{t('firstFloorTitle')}</h3>
                                 <div className="mb-6">
                                     <img src="/assets/residences/floorplan-3.jpg" className="w-full h-auto object-contain mb-4 border rounded bg-gray-50" alt="1st Floor Plan" />
                                 </div>
                                 <table className="w-full text-center">
                                     <thead>
                                         <tr className="bg-gray-100">
-                                            <th className="py-2">Unit</th>
-                                            <th className="py-2">Area (m²)</th>
+                                            <th className="py-2">{t('unitLabel')}</th>
+                                            <th className="py-2">{t('areaLabel')}</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -205,8 +204,8 @@ export default function Residences() {
                                     </tbody>
                                 </table>
                                 <div className="flex gap-4 mt-4 text-xs font-bold uppercase justify-center">
-                                    <span className="flex items-center"><span className="w-3 h-3 bg-blue-100 border border-blue-200 mr-2"></span> Pool View</span>
-                                    <span className="flex items-center"><span className="w-3 h-3 bg-green-100 border border-green-200 mr-2"></span> Courtyard View</span>
+                                    <span className="flex items-center"><span className="w-3 h-3 bg-blue-100 border border-blue-200 mr-2"></span> {t('poolView')}</span>
+                                    <span className="flex items-center"><span className="w-3 h-3 bg-green-100 border border-green-200 mr-2"></span> {t('courtyardView')}</span>
                                 </div>
                             </div>
                         </div>
@@ -217,8 +216,8 @@ export default function Residences() {
                 <section className="bg-gray-50 py-20 border-t border-gray-200">
                     <div className="container mx-auto px-4">
                         <div className="text-center mb-12">
-                            <h2 className="text-3xl font-serif font-bold text-gray-800 uppercase tracking-wide mb-4">Discover Life at Tropical Casa Laguna</h2>
-                            <p className="text-xl text-tcl-gold font-serif italic">Schedule a private tour or request more information today.</p>
+                            <h2 className="text-3xl font-serif font-bold text-gray-800 uppercase tracking-wide mb-4">{t('discoveryTitle')}</h2>
+                            <p className="text-xl text-tcl-gold font-serif italic">{t('discoverySubtitle')}</p>
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -238,25 +237,25 @@ export default function Residences() {
                                     <div className="mb-0 w-full">
                                         <img src="/logo.png" alt="Logo" className="w-40 h-30 object-contain" />
                                     </div>
-                                    <h3 className="text-2xl font-serif font-bold text-gray-800">Tropical Casa Laguna</h3>
+                                    <h3 className="text-2xl font-serif font-bold text-gray-800">{t('contactName')}</h3>
                                     <div className="space-y-3 text-gray-600">
                                         <p className="flex items-start justify-center md:justify-start">
                                             <MapPin className="text-tcl-gold mr-2 mt-1 flex-shrink-0" size={18} />
-                                            Calle Principal, Cabarete, Puerto Plata,<br/>Dominican Republic
+                                            {t('contactAddress')}
                                         </p>
                                         <p className="flex items-center justify-center md:justify-start">
                                             <Phone className="text-tcl-gold mr-2 flex-shrink-0" size={18} />
-                                            +507-6676-2512
+                                            {t('contactPhone')}
                                         </p>
                                         <p className="flex items-center justify-center md:justify-start">
                                             <Mail className="text-tcl-gold mr-2 flex-shrink-0" size={18} />
-                                            <a href="mailto:reservations@tropicalcasalaguna.com" className="hover:text-tcl-gold transition-colors">reservations@tropicalcasalaguna.com</a>
+                                            <a href={`mailto:${t('contactEmail')}`} className="hover:text-tcl-gold transition-colors">{t('contactEmail')}</a>
                                         </p>
                                     </div>
                                     <a href="mailto:info@tropicalcasalaguna.com" className="w-full hover:text-tcl-gold transition-colors">
-                                    <button className="w-full cursor-pointer bg-yellow-500 text-white font-bold py-3 rounded hover:bg-yellow-600 transition-colors uppercase tracking-wider shadow-md mt-4">
-                                        Contact Sales
-                                    </button>
+                                        <button className="w-full cursor-pointer bg-yellow-500 text-white font-bold py-3 rounded hover:bg-yellow-600 transition-colors uppercase tracking-wider shadow-md mt-4">
+                                            {t('contactCta')}
+                                        </button>
                                     </a>
                                 </div>
                             </div>
@@ -265,5 +264,5 @@ export default function Residences() {
                 </section>
             </div>
         </>
-    )
+    );
 }

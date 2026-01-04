@@ -46,10 +46,6 @@ export default function HeroNav() {
                             {/* <div><Image src="/assets/es.svg" width="32" height="32" alt="RTC"/></div> */}
                             <div>ES</div>
                         </div></Link>
-                        <Link href="/ru"><div className="flex justify-center items-center space-x-3 hover:bg-[#e4c932] px-5 py-2">
-                            {/* <div><Image src="/assets/ru.svg" width="32" height="32" alt="RTC"/></div> */}
-                            <div>RU</div>
-                        </div></Link>
                     </div>}
                 </div>
             </div>

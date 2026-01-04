@@ -4,8 +4,6 @@ import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 import FooterWhite from "../components/FooterWhite";
 import ChatButton from "../components/ChatButton";
-import { Navigation } from "../components/Navigation";
-import Header from "../components/Header";
 import SimpleHeader from "../components/SimpleHeader";
  
 export default async function LocaleLayout({
@@ -21,7 +19,6 @@ export default async function LocaleLayout({
   return (
     <>
         <SimpleHeader />
-        {/* <Header /> */}
         {children}
         <ChatButton />
         <FooterWhite />

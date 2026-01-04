@@ -1,20 +1,245 @@
 {
     "HomePage": {
-        "title": "Tropical Casa Laguna Hotel"
+        "title": "Hotel Tropical Casa Laguna"
     },
     "Navbar": {
-        "language": "es",
+        "language": "ES",
         "home": "Inicio",
-        "accomodations": "Alojamiento",
+        "accomodations": "Alojamientos",
         "food-drink": "Comida y Bebida",
         "beach-club": "Club de Playa",
         "spa-wellness": "Spa y Bienestar",
         "events-packages-offers": "Eventos, Paquetes y Ofertas",
-        "residences":  "Residencias",
-        "live-webcam": "Webcam en vivo",
-        "book-now": "Reservar Ahora",
-        "signin": "Iniciar Sesión",
-        "signout": "Cerrar Sesión",
-        "Dominican-Republic-Cabarete-Calle-principal": "República Dominicana, Cabarete, Calle principal."
+        "residences": "Residencias",
+        "live-webcam": "Cámara en vivo",
+        "book-now": "Reservar ahora",
+        "signin": "Iniciar sesión",
+        "signout": "Cerrar sesión",
+        "Dominican-Republic-Cabarete-Calle-principal": "República Dominicana, Cabarete, Calle Principal"
+    },
+    "Accomodations": {
+        "title": "Alojamientos",
+        "subtitle": "Descubre nuestra variedad de habitaciones cómodas y elegantes, diseñadas para ser tu hogar lejos de casa.",
+        "amenitiesLink": "Servicios de la habitación, detalles y políticas",
+        "todaysLowRate": "Tarifa más baja de hoy",
+        "checkRates": "Consultar tarifas",
+        "rooms": [
+            {
+                "id": "1",
+                "name": "Superior, 1 cama king, vista a la montaña",
+                "description": "Relájate con impresionantes vistas de las montañas. Incluye internet de alta velocidad y comodidades modernas.",
+                "price": "$120 / noche",
+                "imageUrl": "/assets/accomodations/room-1.jpg",
+                "amenities": ["WiFi gratis", "Aire acondicionado", "Cama king", "Vista a la montaña"]
+            },
+            {
+                "id": "2",
+                "name": "Superior, 1 cama king, vista al jardín",
+                "description": "Sumérgete en nuestros jardines tropicales. Esta habitación serena ofrece balcón privado y un espacio amplio.",
+                "price": "$145 / noche",
+                "imageUrl": "/assets/accomodations/room-2.jpg",
+                "amenities": ["WiFi gratis", "Acceso al jardín", "Cama king", "Balcón privado"]
+            },
+            {
+                "id": "3",
+                "name": "Superior, 1 cama king, vista a la piscina",
+                "description": "Vistas directas a nuestras relucientes piscinas. La elección perfecta para quienes aman estar cerca del agua.",
+                "price": "$165 / noche",
+                "imageUrl": "/assets/accomodations/room-3.jpg",
+                "amenities": ["WiFi gratis", "Vista a la piscina", "Cama king", "Minibar"]
+            }
+        ]
+    },
+    "BeachClub": {
+        "heroTitle": "Tropical Casa Laguna Beach Club y Restaurante Kalipso",
+        "intro": [
+            "A pocos pasos encontrarás el Restaurante Kalipso, socio oficial del Beach Club. Aquí la gastronomía frente al mar se mezcla con sabor local: mariscos frescos, favoritos mediterráneos, cócteles tropicales y buena música, todo con vistas increíbles al mar.",
+            "Ya sea tomando un cóctel al atardecer o almorzando con los pies en la arena, el Beach Club y Kalipso ofrecen la combinación perfecta de vida de playa y sabor local, justo donde Cabarete cobra vida."
+        ],
+        "clubTitle": "Tropical Casa Laguna Beach Club",
+        "clubDescription": "Disfruta del ambiente relajado del Beach Club, con la mejor ubicación en Cabarete Beach. Estamos directamente en la arena, con camastros, sombrillas y una brisa perfecta para tomar el sol o escuchar las olas. Busca a Danny, nuestro concierge de playa, para conseguir un chaise lounge cómodo y recomendaciones sobre deportes acuáticos.",
+        "highlightsTitle": "Puntos destacados del Beach Club",
+        "highlights": [
+            "En el corazón de toda la actividad de Cabarete",
+            "Capital caribeña de los deportes acuáticos; estás en el centro de todo:",
+            "Kitesurf y windsurf: toma clases o renta equipo a pocos pasos. Cabarete Bay y Kite Beach tienen vientos constantes y condiciones ideales.",
+            "Surf en Playa Encuentro: a corta distancia hacia el oeste, ideal para todos los niveles.",
+            "Paddleboard: las aguas tranquilas de la mañana son perfectas para remar.",
+            "Snorkel y buceo: explora arrecifes en la cercana bahía de Sosua con excursiones fáciles."
+        ]
+    },
+    "Events": {
+        "title": "Eventos, Paquetes y Ofertas",
+        "description": "Experiencias curadas, ofertas de temporada y celebraciones a medida para nuestros huéspedes."
+    },
+    "FoodDrink": {
+        "title": "Comida y Bebida",
+        "intro": "Desde opciones orgánicas y saludables hasta cenas de mariscos al atardecer, saborea el Caribe en nuestros distintos espacios gastronómicos.",
+        "venues": [
+            {
+                "id": "oasis",
+                "name": "Oasis Pool Bar",
+                "description": [
+                    "Ubicado dentro de las aguas azules de la piscina principal, el Oasis Pool Bar redefine la relajación con su barra dentro del agua. Mezcla lujo con comodidad: disfruta cócteles artesanales sin salir de la piscina.",
+                    "Relájate en los taburetes sumergidos mientras sientes el agua fresca. El menú ofrece una selección de bebidas tropicales, vinos y licores premium.",
+                    "Centro social de la zona de la piscina, el Oasis no solo refresca: cada momento se convierte en parte de unas vacaciones inolvidables."
+                ],
+                "location": "En el corazón de la zona de piscina",
+                "hours": "Lun-Mar: 1pm - 7pm, Mié-Dom: 12pm - 7pm",
+                "imageUrl": "/assets/foodndrink/oasis.jpg",
+                "features": ["Bar dentro de la piscina", "Cócteles tropicales", "Mocktails", "Snacks ligeros"]
+            },
+            {
+                "id": "fresh",
+                "name": "Fresh Fresh Café",
+                "description": [
+                    "Un lugar luminoso enfocado en la salud, conocido por platos frescos y llenos de sabor con ingredientes orgánicos. Ideal para vegetarianos y veganos con bowls, wraps y jugos energizantes.",
+                    "Perfecto para un desayuno nutritivo o un almuerzo ligero después de nadar o hacer yoga. El ambiente casual y el menú saludable lo vuelven favorito de los huéspedes conscientes.",
+                    "Ya sea por un batido rápido o una comida relajada, Fresh Fresh Café ofrece una experiencia que nutre cuerpo y mente."
+                ],
+                "location": "Al frente del resort, en la calle principal",
+                "hours": "Lun-Mar: 7:30am - 7pm, Mié-Dom: 7:30am - 9pm",
+                "imageUrl": "/assets/foodndrink/freshfresh.png",
+                "features": ["Orgánico", "Opciones veganas", "Bowls y smoothies", "Ambiente casual"]
+            },
+            {
+                "id": "kalipso",
+                "name": "Restaurante Kalipso",
+                "description": [
+                    "Kalipso es el destino imprescindible para una comida relajada pero elegante frente al mar. Ubicado directamente en la arena y a pasos del Beach Club, invita a disfrutar mariscos locales, favoritos mediterráneos y cócteles tropicales, con vistas amplias al océano y brisa isleña.",
+                    "Ya sea un almuerzo casual junto a las olas, una cena romántica al atardecer o cócteles con amigos bajo las estrellas, Kalipso mezcla encanto tropical con sofisticación relajada.",
+                    "Los huéspedes de Tropical Casa Laguna disfrutan la facilidad de tener el restaurante más escénico de Cabarete a pocos pasos. Kalipso: donde la buena comida, el ambiente playero y los momentos memorables se unen."
+                ],
+                "location": "En la playa, frente al resort",
+                "hours": "Diario 7:30am - 9:00pm",
+                "imageUrl": "/assets/foodndrink/kalipso.jpg",
+                "features": ["Frente al mar", "Mariscos frescos", "Música en vivo", "Vistas al atardecer"]
+            }
+        ]
+    },
+    "Residences": {
+        "bannerTitle": "Las Residencias",
+        "bannerSubtitle": "Estudios de 1 y 2 habitaciones - Playa Cabarete - República Dominicana",
+        "bannerCta": "Solicitar información",
+        "oasisTitle": "Un oasis tranquilo",
+        "oasisSubtitle": "Entre el océano y la laguna",
+        "oasisDescription": "Tropical Casa Laguna es un oasis pacífico en el centro de Cabarete, en la costa norte de República Dominicana. A solo 25 minutos del Aeropuerto de Puerto Plata, este pueblo relajado se ha convertido en uno de los destinos más populares del Caribe.",
+        "liveStayPlayTitle": "Vive, quédate y juega en el paraíso.",
+        "liveStayPlayDescription": "Descubre suites remodeladas de 35 a 60 m², rodeadas de jardines y amenidades tipo resort. Tu oasis tropical te espera—perfecto para vivir, descansar y disfrutar el estilo de vida de Cabarete.",
+        "liveStayPlayBullets": ["Comodidad clásica, elegancia tropical", "Desarrollo exclusivo", "Amenidades modernas"],
+        "classicComfortTitle": "Comodidad clásica, elegancia tropical",
+        "classicComfortDescription": "Tropical Casa Laguna Residences, Resort & Spa combina confort contemporáneo con la tranquilidad de un paisaje de oasis tropical.",
+        "communityTitle": "Una comunidad diseñada para vivir bien",
+        "communityDescription": "La vida va más allá de tu hogar. Nuestras amenidades fomentan la conexión, enriquecen el día a día y hacen que cada momento se sienta intencional.",
+        "communityTags": ["Tres piscinas y un jacuzzi", "Terraza Oasis Palm y bar dentro de la piscina", "A pasos de Playa Cabarete", "Servicios de spa en el sitio"],
+        "cabareteTitle": "La bulliciosa playa de Cabarete",
+        "cabareteDescription": "A pocos pasos del resort, la playa principal de Cabarete ofrece cafés, restaurantes y tiendas frente al mar. Arena limpia y palmeras reales crean un escenario perfecto para aventureros o para quienes solo quieren relajarse al sol caribeño.",
+        "adventureTitle": "Donde la aventura se une al descanso",
+        "adventureDescription": "Cabarete es famosa por surf, windsurf, kitesurf y wing foil—todo lo que busca el viajero activo. También es ideal para familias que desean descansar en arena dorada y nadar en aguas cálidas y tranquilas.",
+        "floorPlansTitle": "Planos y disponibilidad",
+        "secondFloorTitle": "2° piso",
+        "firstFloorTitle": "1° piso",
+        "unitLabel": "Unidad",
+        "areaLabel": "Área (m²)",
+        "poolView": "Vista a la piscina",
+        "courtyardView": "Vista al patio",
+        "discoveryTitle": "Descubre la vida en Tropical Casa Laguna",
+        "discoverySubtitle": "Agenda un tour privado o solicita más información hoy.",
+        "contactName": "Tropical Casa Laguna",
+        "contactAddress": "Calle Principal, Cabarete, Puerto Plata, República Dominicana",
+        "contactPhone": "+507-6676-2512",
+        "contactEmail": "reservations@tropicalcasalaguna.com",
+        "contactCta": "Contactar ventas"
+    },
+    "SpaWellness": {
+        "heroTitle": "Spa y Bienestar: relajación y renovación",
+        "heroIntro": "Sumérgete en un santuario de tranquilidad con nuestras experiencias de spa y bienestar, pensadas para elevar tu bienestar y recuperar tu equilibrio natural.",
+        "poolsTitle": "Piscinas y jacuzzi",
+        "poolsIntro": "Completa tu viaje de bienestar relajándote en una de nuestras tres piscinas, cada una diseñada para una experiencia distinta: ocio, nado o diversión familiar.",
+        "poolsBody": "Para una relajación más profunda, disfruta la calidez del jacuzzi, perfecto para aliviar el estrés y la tensión.",
+        "endorphineryBanner": "The Endorphinery",
+        "endorphineryTitle": "The Endorphinery - Masajes conscientes y bienestar",
+        "endorphineryDescription": "En The Endorphinery, terapeutas expertos combinan técnica y atención plena para ofrecer masajes transformadores. Desde el sueco hasta el tejido profundo o tratamientos a medida, cada sesión renueva el cuerpo, calma la mente y eleva el espíritu.",
+        "endorphineryServices": ["Masaje clásico", "Masaje con aromaterapia", "Masaje para kitesurfistas", "Masaje para surfistas"],
+        "beautyTitle": "Beauty Is Art - Elevando tu estilo",
+        "beautyDescription": "Ubicado en el tercer piso, Beauty Is Art ofrece servicios de salón que redefinen el autocuidado. Manicuras impecables, cejas precisas, pestañas, cambios de look y faciales para que te veas y sientas increíble.",
+        "beautyLocation": "UBICACIÓN: 3er piso",
+        "savingGraceTitle": "Saving Grace",
+        "savingGraceSubtitle": "Yoga y terapia de masaje",
+        "savingGraceHeroTitle": "Yoga con Saving Grace",
+        "savingGraceDescription": "Nuestra instructora guía sesiones regulares para todos los niveles, ayudándote a encontrar equilibrio y armonía con movimiento y atención plena.",
+        "savingGraceBenefitsTitle": "Beneficios",
+        "savingGraceBenefits": [
+            "Mayor flexibilidad y fuerza",
+            "Tono muscular largo y estilizado",
+            "Alivio y prevención del dolor",
+            "Respiración más plena",
+            "Reducción del estrés y calma",
+            "Mejor concentración",
+            "Manejo de peso",
+            "Mejora de la postura",
+            "Paz interior"
+        ],
+        "savingGraceScheduleLabel": "Horario:",
+        "savingGraceScheduleValue": "Martes y jueves en temporada alta",
+        "servicesCards": [
+            {
+                "title": "The Endorphinery",
+                "subtitle": "Masajes conscientes y bienestar",
+                "description": "Terapeutas expertos combinan técnica y mindfulness. Desde masajes suecos hasta tejido profundo."
+            },
+            {
+                "title": "Beauty Is Art",
+                "subtitle": "Elevando tu look",
+                "description": "Ubicado en el 3er piso. Servicios de salón: manicura, cejas, pestañas y cambios de look."
+            },
+            {
+                "title": "Saving Grace Yoga",
+                "subtitle": "Equilibrio y armonía",
+                "description": "Sesiones de yoga para todos los niveles. Más flexibilidad, calma mental y paz interior."
+            }
+        ]
+    },
+    "Home": {
+        "taglineLabel": "El Resort",
+        "taglineHeading": "Un oasis tranquilo entre el océano y la laguna",
+        "taglineBody": "Tropical Casa Laguna es un oasis pacífico en el centro de Cabarete, en la costa norte de República Dominicana. A pasos de la vida del pueblo y lo suficientemente apartado para ofrecer relajación, es el balance perfecto para tus vacaciones soñadas.",
+        "highlights": [
+            {
+                "title": "En el corazón de Cabarete",
+                "body": "Cabarete es un pueblo de playa vibrante, capital de la aventura en el Caribe. A solo 25 minutos del Aeropuerto Internacional de Puerto Plata (POP), llegar es muy fácil."
+            },
+            {
+                "title": "Deportes acuáticos de nivel mundial",
+                "body": "Famosa por kitesurf, windsurf y surf. Seas profesional o principiante, las aguas cálidas y los vientos constantes son un paraíso para los deportes acuáticos."
+            },
+            {
+                "title": "Entorno exuberante",
+                "body": "Paisajes costeros, lagunas cercanas, colinas y vegetación tropical crean un escenario espectacular para tus vacaciones."
+            }
+        ],
+        "teasers": [
+            {
+                "title": "Gastronomía exquisita",
+                "description": "Desde bares en la piscina hasta mariscos frente al mar."
+            },
+            {
+                "title": "Spa y bienestar",
+                "description": "Rejuvenece en The Endorphinery o relájate en nuestras piscinas."
+            },
+            {
+                "title": "Paraíso propio",
+                "description": "Estudios de 1 y 2 habitaciones en venta."
+            }
+        ],
+        "oasisBanner": "UN OASIS A PASOS DE LA PLAYA, EN EL CORAZÓN DE CABARETE.",
+        "geoLead": "Cabarete es un vibrante pueblo de playa en la costa norte de República Dominicana, en la provincia de Puerto Plata. Está sobre la costa atlántica y a solo 18 km (11 mi)/25 minutos del aeropuerto de Puerto Plata.",
+        "geoBody": "Cabarete es famosa por su cultura de deportes acuáticos, especialmente kitesurf, windsurf y surf, y combina paisajes costeros con lagunas cercanas, colinas y vegetación tropical. Esta ciudad relajada se ha convertido en uno de los destinos más populares del Caribe."
+    },
+    "V2": {
+        "nav": ["Inicio", "Inicio", "Inicio", "Inicio"],
+        "headline": "UN OASIS, A PASOS DE LA PLAYA, EN EL CORAZÓN DE CABARETE.",
+        "introLead": "Tropical Casa Laguna es un oasis tranquilo en el centro de Cabarete, en la costa norte de República Dominicana. A solo 25 minutos del Aeropuerto de Puerto Plata, se ha vuelto un destino favorito en el Caribe.",
+        "introBody": "La playa de Cabarete es famosa por surf, windsurf, kitesurf, foil y wing. Ideal para viajeros activos y también para familias que buscan relajarse en arena suave y agua cálida. La playa central, a pasos del resort, tiene infraestructura completa, arena dorada y palmeras reales."
     }
 }

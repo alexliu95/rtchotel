@@ -1,12 +1,9 @@
 import "./globals.css";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
-import FooterWhite from "./components/FooterWhite";
 import ChatButton from "./components/ChatButton";
-import { Navigation } from "./components/Navigation";
-import Header from "./components/Header";
-import SimpleHeader from "./components/SimpleHeader";
  
 export default async function LocaleLayout({
   children,
@@ -17,17 +14,15 @@ export default async function LocaleLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+
+  const messages = await getMessages();
  
   return (
     <html lang={locale}>
       <body>
-        <NextIntlClientProvider>
-          {/* <Header /> */}
-          {/* <SimpleHeader /> */}
-          {/* <Header /> */}
+        <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
           <ChatButton />
-          {/* <FooterWhite /> */}
         </NextIntlClientProvider>
       </body>
     </html>

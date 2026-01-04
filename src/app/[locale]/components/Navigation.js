@@ -1,8 +1,6 @@
 'use client';
-import { Menu, User, Search } from "lucide-react";
 // import { Button } from "@/components/ui/button";
 import { useRef, useState } from "react";
-import { Button } from "./ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -62,15 +60,11 @@ export const Navigation = () => {
                         {siteSelectionDisplay &&<div className="absolute z-40 top-0 right-0 backdrop-blur-md shadow-lg" ref={siteRef} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
                             <Link href="/en"><div className="flex justify-center items-center space-x-3 hover:bg-[#e4c932] px-5 py-2">
                                 {/* <div><Image src="/assets/us.svg" width="32" height="32" alt="RTC"/></div> */}
-                                <div>US</div>
+                                <div>EN</div>
                             </div></Link>
                             <Link href="/es"><div className="flex justify-center items-center space-x-3 hover:bg-[#e4c932] px-5 py-2">
                                 {/* <div><Image src="/assets/es.svg" width="32" height="32" alt="RTC"/></div> */}
                                 <div>ES</div>
-                            </div></Link>
-                            <Link href="/ru"><div className="flex justify-center items-center space-x-3 hover:bg-[#e4c932] px-5 py-2">
-                                {/* <div><Image src="/assets/ru.svg" width="32" height="32" alt="RTC"/></div> */}
-                                <div>RU</div>
                             </div></Link>
                         </div>}
                     </div>
