@@ -7,7 +7,7 @@ export const Hero = () => {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.2;
+      videoRef.current.playbackRate = 1;
     }
   }, []);
 
